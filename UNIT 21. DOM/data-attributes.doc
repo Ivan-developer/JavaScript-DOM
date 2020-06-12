@@ -1,0 +1,25 @@
+Иногда есть необходимость в HTML хранить некоторые данные, которые потом нужны в скриптах. 
+Для этого существуют специальные атрибуты - data-attributes. 
+Дата атрибуты имеют вид data-user-id="123456" - идет префикс data-, 
+а за ним название пользовательского атрибута. Такое название связано с тем, 
+чтобы наши пользовательские атрибуты не конфликтовали со стандартными HTML атрибутами. 
+Для работы с такими атрибутами у DOM элементов есть специальное свойство element.dataset, 
+которое позволяет работать с data-атрибутами как с объектом. 
+Устанавливая и изменяя свойства в element.dataset мы автоматически изменяем data-атрибуты у HTML
+элемента
+
+    <!-- index.html -->
+    <div data-user-id="12345" data-last-name="Johnson" class="user">Andrew</div>
+  
+    /* index.js */
+    const userElem = document.querySelector('.user');
+    console.log(userElem.dataset); // { userId: '12345', lastName: 'Johnson' }
+    userElem.dataset.age = 21;
+    userElem.dataset.lastName = 'White';
+  
+    <!-- index.html -->
+    <div data-user-id="12345" data-last-name="White" data-age="17" class="user">Andrew</div>
+  
+Здесь интересный момент, заключается в именовании. Если название атрибута в HTML - маленькие буквы
+ через дефиз, то свойства в element.dataset написаны в camelCase - убираем префикс data- 
+ и вместо дефисов каждое слово кроме первого начинаем с большой буквы
