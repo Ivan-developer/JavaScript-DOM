@@ -1,0 +1,50 @@
+1.	/*События - part 1*/
+2.	// Задание обработчиков событий
+3.	//Самый простой - добавить прямо в html. Например, <div onclick = "console.log('Hi')" class = 'newclass'>...< /div>
+4.	// при нажатии на этот див выведет в консоль 'Hi'
+5.	//Второй способ назначения обработчиков событий - нужно получить ссылку на элемент - назначаем переменную и присваиваем ей класс дива: 
+6.	const elem = document.querySelector('.newclass');
+7.	elem.onclick = function() {
+8.	        console.log('Hi'); // при нажатии на этот див выведет в консоль 'Hi'
+9.	    }
+10.	    //Оба способа одинаковые. Но с ними нельзя повесить 2 и более обработчика на один элемент. НА ПРАКТИКЕ ПОЧТИ НЕ ИСПОЛЬЗУЮТ!
+11.	    // На практике используют addEventListener - он принимает 3 аргумента: 1) название события; 2) функция, срабатывающая на это событие; 3) объект настроек {} (потом раскажет); . Главное преимущество - их можно отменять.
+12.	const elem = document.querySelector('.newclass');
+13.	const sayHi = () => { console.log('Hi') };
+14.	const sayHello = () => { console.log('Hello') };
+15.	elem.addEventListener('click', sayHi); // Hi выведет в консоль при нажатии на див
+16.	elem.addEventListener('click', sayHello); // Hi Hello выведет в консоль оба назначения при нажатии на див
+17.	elem.removeEventListener('click', sayHi) // Отменит вывод Hi  в консоль при нажатии на див
+18.	______________________________________________________________
+19.	// Выводим обработчики которые сработали в отдельное окно
+20.	const logTarget = (text, color) => {
+21.	    const eventsListElem = document.querySelector('.event - list');
+22.	    eventsListElem.innerHTML = `<span style = "color: ${color}">${text}</span>`; // вставляем спан с текстом и цветом
+23.	}
+24.	const logGreenDiv = () => { logTarget("DIV", "green") };
+25.	// или можно так  const logGreenDiv = logTarget.bind(null, "DIV", "green");
+26.	elem.addEventListener('click', logGreenDiv); // выведет один раз в окно текст "DIV" зеленого цвета.
+27.	// если eventsListElem.innerHTML +=  будет добавлятся  "DIV" на каждый клик
+28.	//innerHTML используем только для вывода наших данных. У него есть проблемы с безопасностью - если в вводе даных участвует пользователь нужно использовать textContent - текст вставиться как есть без преобразований.
+29.	//-------------------------------------------------------------
+30.	// Всплытие свойств - когда нажимаешь на вложенний элемент  - отрабатывает и родительский(если ему указано такое же действие)
+31.	const divElem = document.querySelector('.rect_div');
+32.	const pElem = document.querySelector('.rect_p');
+33.	const spanElem = document.querySelector('.rect_span');
+34.	const logTarget = (text, color) => {
+35.	    const eventsListElem = document.querySelector('.event - list');
+36.	    eventsListElem.innerHTML = `<span style = "color: ${color}">${text}</span>`;
+37.	};
+38.	const logGreenDiv = logTarget.bind(null, "DIV", "green");
+39.	const logGreenP = logTarget.bind(null, "P", "green");
+40.	const logGreenSpan = logTarget.bind(null, "SPAN", "green");
+41.	
+42.	
+43.	divElem.addEventListener('click', logGreenDiv);
+44.	pElem.addEventListener('click', logGreenP);
+45.	spanElem.addEventListener('click', logGreenSpan);
+46.	/*чтобы прервать всплытие можно ввести 
+47.	pElem.addEventListener('click', event => {logGreenP();
+48.	    event.stopPropagation();
+49.	});
+50.	*/
