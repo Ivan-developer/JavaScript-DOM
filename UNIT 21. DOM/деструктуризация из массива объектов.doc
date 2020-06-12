@@ -1,0 +1,23 @@
+const user = [
+    { name : 'Tom'},
+    { name : 'Max'}
+]
+
+const {name} = user[1]
+
+console.log(name)
+
+const titleHistory = tittle =>{
+    const tex = document.querySelector('.root')
+    tex.textContent = tittle
+
+    tex.onclick = () => {
+
+
+           console.log('work')
+    
+    }
+}
+
+titleHistory(name)
+
