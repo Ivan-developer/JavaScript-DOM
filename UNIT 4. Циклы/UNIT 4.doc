@@ -1,0 +1,111 @@
+Урок 4: Циклы - используются в языках програмироввания если нужно какойта участок кода повторить несколько раз
+1.	Цикл while - предпроверкой 
+2.	Цикл do...while  - условие проверяется в конце
+3.	Цикл for - который чуть гибко настраивается 
+4.	Бесконечные циклы
+
+1.	while (условие - приводит к boolean true / false ) {
+2.	//тело цикла - один прогон кода называется итерация цикла
+3.	{
+
+1.	while (false) {
+2.	    console.log("text");
+3.	} // ничего не выпонилось потому что значение ложное (false) так сказать пошел дальше 
+
+1.	while(true) {
+2.	    console.log("text");
+3.	} // выпонилось - 2863 получили бесконечный цикл 
+ 
+more tools - task manager если зациклилось 
+
+1.	let n = 1;
+2.	while (n <= 10){
+3.	    console.log(n);
+4.	    n++;
+5.	}
+
+1.	let n = 10;
+2.	let sum = 0;
+3.	while (n > 0){
+4.	    sum += n;
+5.	    n -= 1;
+6.	}
+7.	console.log("Result: " + sum);
+
+1.	do{
+2.	    // тело цикла
+3.	    // код выполняется хотябы один раз
+4.	} while (//условие)
+
+1.	let n = 10;
+2.	let sum = 0;
+3.	do{
+4.	sum += n;
+5.	n -= 1;
+6.	} while (n > 0)
+7.	console.log("Result: " + sum);
+
+1.	let m = 10;
+2.	let n = 20;
+3.	let result = 1;
+4.	do {
+5.	    if (m % 2 === 1) {
+6.	        result *= m;
+7.	    }
+8.	    m++;
+9.	} while (m <= n);
+10.	console.log("Result: " + result);
+
+1.	for(инициализация; условие выхода из цикла; шаг){
+2.	    //тело цикла
+3.	}
+
+1.	let result = 1;
+2.	for (let m = 10; m <= 20; m++) {
+3.	    if (m % 2 === 1) {
+4.	        result *= m;
+5.	    }
+6.	}
+7.	console.log("Result: " + result);
+
+1.	Таблица умножения 
+2.	for (let i = 1; i <= 5; i++) {
+3.	    for (let j = 1; j <= 10; j++) {
+4.	        console.log(i + " x " + j + " = " + i * j);
+5.	    }
+6.	}
+7.	
+8.	for (let i = 1; i <= 5; i++) {
+9.	    console.log("\n=> " + i + " <=\n\n");
+10.	    for (let j = 1; j <= 10; j++) {
+11.	        console.log(i + " x " + j + " = " + i * j);
+12.	    }
+13.	}
+
+Бесконечный Цикл
+
+1.	let result = 0;
+2.	while (true) {
+3.	    const userInput = prompt("Your number");
+4.	    if (!userInput) {
+5.	        break;
+6.	    }
+7.	    result += Number(userInput);
+8.	}
+9.	console.log("Result: " + result);
+
+1.	let result = 1;
+2.	for (let m = 10; m <= 20; m++) {
+3.	    if (m % 2 === 0) {
+4.	        continue;
+5.	    }
+6.	    result *= m;
+7.	}
+8.	console.log("Result: " + result);
+
+1.	let result = 1;
+2.	for (let m = 10; m <= 20; m++) {
+3.	    if (m % 2 === 0) continue;
+4.	    result *= m;
+5.	}
+6.	console.log("Result: " + result);
