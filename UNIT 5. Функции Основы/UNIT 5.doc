@@ -1,0 +1,256 @@
+Урок 5: Функции
+1.	Определение и применение 
+2.	Аргументы и переменные ф-ции
+3.	Возврат значение из ф-ции
+4.	Объявление функции, анонимные ф-ции
+5.	Стрелочные Функции
+______________________________________________________________________________
+
+1. Простейшая фунция 
+                               ИМЯ АГРУМЕНТ 
+1.	function sayHi(name) {
+2.	    console.log("hello, " + name);  - ТЕЛО ФУНКЦИИ
+3.	}
+Функция используется для того что бы избежать дублирование кода. 
+
+____________________________________________________________
+2. Стандартная функция 
+1.	function getSum(a, b) {
+2.	    console.log(a + b); //alert(); promt(); 
+3.	}
+4.	getSum(2,3) //5 
+
+_____________________________________________________________
+3.  function arguments - Агрументы функции
+ Как аргумент принимать имя и в кансоль выводить приветствие 
+
+1.	function sayHi(name) {
+2.	    const greeting = "hi, " + name;
+3.	    console.log(greeting);
+4.	}
+5.	sayHi("ann");
+
+1.	const prefix = "hi, ";
+2.	
+3.	function sayHi(name) {
+4.	    const greeting = prefix + name;
+5.	    console.log(greeting);
+6.	}
+7.	sayHi("ann");
+
+Сделаем в функции две переменные:
+1.	const prefix = "hi, ";
+2.	
+3.	function sayHi(name, anotherName) {
+4.	    console.log("anotherName: ", anotherName);
+5.	    const greeting = prefix + name;
+6.	    console.log(greeting);
+7.	}
+8.	sayHi("ann", "bob");
+
+1.	const prefix = "hi, ";
+2.	
+3.	function sayHi(name) {
+4.	    console.log(arguments);
+5.	    const greeting = prefix + name;
+6.	    console.log(greeting);
+7.	}
+8.	sayHi("ann", "bob");
+
+1.	const prefix = "hi, ";
+2.	
+3.	function sayHi(name) {
+4.	    const greeting = prefix + name;
+5.	    console.log(greeting);
+6.	}
+7.	sayHi(); //undefined
+
+1.	const prefix = "hi, ";
+2.	
+3.	function sayHi(name = "anonymus") {
+4.	    const greeting = prefix + name;
+5.	    console.log(greeting);
+6.	}
+7.	sayHi();
+
+1.	const prefix = "hi, ";
+2.	
+3.	function sayHi(name, anotherName = "anonymus") {
+4.	    const greeting = prefix + name + " and " + anotherName;
+5.	    console.log(greeting);
+6.	}
+7.	sayHi("tom"); //hi, tom and anonymus
+
+1.	const prefix = "hi, ";
+2.	
+3.	function sayHi(name, anotherName = "anonymus") {
+4.	    const greeting = prefix + name + " and " + anotherName;
+5.	    console.log(greeting);
+6.	}
+7.	sayHi("tom", "bob"); //hi, tom and bob
+
+___________________________________________________________
+4. return statement - вернуть значение 
+
+принимает число и возвращает "even" или "ood"
+n => "even" / "ood" 
+
+even - четные
+odd - нечестные
+
+1.	function getEvenOdd(num) {
+2.	    if (num % 2 === 0) {
+3.	        return "even";
+4.	    } else {
+5.	        return "odd";
+6.	    }
+7.	}
+
+
+1.	function getEvenOdd(num) {
+2.	    if (num % 2 === 0) {
+3.	        "even";
+4.	    } else {
+5.	        "odd";
+6.	    }
+7.	    return undefined;
+8.	}
+
+1.	function getEvenOdd(num) {
+2.	    if (num % 2 === 0) {
+3.	        return "even";
+4.	    } else {
+5.	        return "odd";
+6.	    }
+7.	}
+8.	const result = getEvenOdd(20);
+9.	
+10.	alert(result);
+
+1.	function getSum(a, b) {
+2.	    return a + b;
+3.	}
+4.	const result = getSum(20, 5);
+5.	alert(result);
+
+1.	const getSum = function(a, b) {
+2.	    return a + b;
+3.	};
+4.	const result = getSum(20, 5);
+5.	alert(result);
+
+1.	const getSum1 = function(a, b) {
+2.	    return a + b;
+3.	};
+4.	
+5.	function getSum2(a, b) {
+6.	    return a + b;
+7.	};
+8.	
+9.	const result1 = getSum1(20, 5);
+10.	const result2 = getSum2(10, 5);
+11.	
+12.	console.log(result1, result2); // 25 15
+
+1.	const result1 = getSum1(20, 5);
+2.	const result2 = getSum2(10, 5);
+3.	
+4.	const getSum1 = function(a, b) {
+5.	    return a + b;
+6.	};
+7.	
+8.	function getSum2(a, b) {
+9.	    return a + b;
+10.	};
+11.	
+12.	console.log(result1, result2); // 25 15
+___________________________________________________________
+5. arrow function - стрелочные функции
+
+Создаем функцию с названием getSquare, будет принимать число num и возвращать квадрат числа (квадрат это число умножить на самого себя). создать переменную result , туда поместим выполнение нашей функции и выведим в консоль результат 
+
+1.	function getSquare(num, arg1) {
+2.	    return num * num;
+3.	}
+4.	
+5.	const result = getSquare(5);
+6.	
+7.	console.log(result); //25
+
+1.	const getSquare = (num) => {
+2.	    return num * num;
+3.	}
+4.	
+5.	const result = getSquare(5);
+6.	
+7.	console.log(result);
+
+1.	const getSquare = num => {
+2.	    return num * num;
+3.	}
+4.	
+5.	const result = getSquare(5);
+6.	
+7.	console.log(result);
+8.	
+
+1.	const getSquare = num => num * num;
+2.	
+3.	const result = getSquare(5);
+4.	
+5.	console.log(result);
+
+Function declaration:
+
+1.	function run(){
+2.	//do somethinf
+3.	}
+
+⦁	Всплывает - может быть использована до обьявления 
+⦁	Имя обазательно 
+
+Function expression:
+
+1.	const run = function (){
+2.	// do something
+3.	}
+
+⦁	Не всплывает 
+⦁	Имя опционально 
+
+Стрелочные функции:
+
+1.	const square = (n) => {
+2.	    return n * n;
+3.	};
+
+Можно передавать как аргументы в другие функции:
+1.	function square (n) {
+2.	      return n * n;
+3.	}
+
+Можно возвращать как результат из другой функции: 
+1.	function counter (){
+2.	          let count = 0;
+3.	          return function (){
+4.	               return count += 1;
+5.	          };
+6.	}
+
+Хранить в переменных:
+1.	const run = function (){
+2.	  console.log ("Running");
+3.	}
+
+Хранить как элементы в разных структурах данных:
+1.	const arr = [
+2.	   square,
+3.	   counter,
+4.	   run
+5.	];
+
+1.	const obj = {
+2.	   square,
+3.	   counter,
+4.	   run
+5.	};
