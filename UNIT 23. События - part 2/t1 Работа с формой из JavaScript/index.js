@@ -7,6 +7,7 @@ const passwordErrorElem = document.querySelector('.error-text_password');
 
 // что бы проанализировать функцию onEmailChange
 const isRequired = value => value ? undefined : 'Required';
+
 // второй валидатор что в поле должен быть email
 const isEmail = value => value.includes("@") ? undefined : 'Should be an email';
 
