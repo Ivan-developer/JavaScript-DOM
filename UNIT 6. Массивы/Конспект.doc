@@ -1,0 +1,167 @@
+Урок 6: Массивы это тип Объекта , у объекта есть особенность она передается по ссылки 
+1.	Как создать массив
+2.	Длина массива
+3.	Перебор массива
+4.	Методы работы с массивами 
+5.	Сперд оператор
+6.	Деструктуризация массива
+
+Что такое массив? 
+Массив это упорядочная колеция элементов 
+В массиве хранится несколько элементов, какое то их количество 
+
+
+Длина массива
+
+1.	const numbers = [11, 22, 33, 55, 66];
+2.	const numberOfElements = numbers.length;
+3.	console.log(numberOfElements); // 3 
+4.	console.log("Elemet #1: " + numbers[1]); // 22
+5.	console.log("Elemet #0: " + numbers[0]); // 11
+6.	console.log("Elemet last: " + numbers[numbers.length - 1]); // 66 
+7.	// [11, 22, 33, 55, 66] => [length, first elem, last elem]
+8.	
+9.	function getArrayBounds(arr) {
+10.	
+11.	    return [arr.length, arr[0], arr[arr.length - 1]];
+12.	}
+13.	const arrayBound = getArrayBounds(numbers);
+14.	console.log(arrayBound); // [5, 11, 66]
+
+1.	const numbers = [11, 22, 33, 55, 66];
+2.	
+3.	function getArrayBounds(arr) {
+4.	    if (!Array.isArray(arr)) {
+5.	        return null;
+6.	    }
+7.	
+8.	    return [arr.length, arr[0], arr[arr.length - 1]];
+9.	}
+10.	const arrayBound = getArrayBounds();
+11.	console.log(arrayBound); // null 
+
+Перебор массива
+
+1.	// перебор массива
+2.	const numbers = [11, 22, 33, 55, 66];
+3.	
+4.	for (let i = 0; i < numbers.length; i++) {
+5.	    console.log(numbers[i]);
+6.	} // 11 22 33 55 66
+
+1.	// поищим сумму всех элементов массивов 
+2.	const numbers = [11, 22, 33, 55, 66];
+3.	
+4.	let sumOfNumbers = 0;
+5.	
+6.	for (let i = 0; i < numbers.length; i++) {
+7.	    console.log(numbers[i]);
+8.	    sumOfNumbers += numbers[i];
+9.	}
+10.	console.log("Result: " + sumOfNumbers); // 11 22 33 55 66 Result: 187
+
+1.	// поищим сумму всех элементов массивов + ВСЕ ОБВЕРНЕМ В ФУНКЦИЮ
+2.	const numbers = [11, 22, 33, 55, 66];
+3.	
+4.	function sum(numbers) {
+5.	    let sumOfNumbers = 0;
+6.	    for (let i = 0; i < numbers.length; i++) {
+7.	        sumOfNumbers += numbers[i];
+8.	    }
+9.	    return sumOfNumbers;
+10.	}
+11.	
+12.	const sumOfElements = sum(numbers);
+13.	
+14.	console.log("Result: " + sumOfElements); // Result: 187
+
+
+Методы работы с массивами 
+1.	// методы .pop(), .push(), .shift(), .unshift()
+2.	
+3.	const people = ["Tom", "Ann", "Bob"];
+4.	people[3] = "Jack";
+5.	console.log(people); // добавили массив
+
+1.	const people = ["Tom", "Ann", "Bob"];
+2.	people[10] = "Jack";
+3.	console.log(people); // 11 (empty x 7)
+4.	console.log(people.length); // 10 + 0 = 11 всего // это плохая практика
+
+1.	const people = ["Tom", "Ann", "Bob"];
+2.	people[people.length] = "Jack";
+3.	console.log(people); 
+4.	console.log(people.length); // добавили новый элемент
+
+1.	const people = ["Tom", "Ann", "Bob"];
+2.	people.length = 10; // появится 10 элементов если = 2 сделаем то будет только два элемента показываться
+3.	console.log(people); 
+4.	console.log(people.length); // добавили новый элемент
+
+1.	// методы .pop(), .push(), .shift(), .unshift()
+2.	
+3.	const people = ["Tom", "Ann", "Bob"];
+4.	
+5.	//people.unshift("Jack", "John"); // add to start
+6.	//people.shift(); // delete to start
+7.	//people.push("Jack", "John"); // add to end
+8.	//people.pop(); // delete to end - удаляет последний 
+9.	console.log(people);
+10.	console.log(people.length);
+
+1.	const people = ["Tom", "Ann", "Bob"];
+2.	const last = people.pop(); //delete to end
+3.	console.log(last);
+4.	console.log(people);
+5.	console.log(people.length);
+
+1.	const people = ["Tom", "Ann", "Bob"];
+2.	const first = people.shift(); //delete to start
+3.	console.log(first);
+4.	console.log(people);
+5.	console.log(people.length);
+
+1.	// from , to => [n % 3 === 0]
+2.	
+3.	function getSpecialNumbers(from, to) {
+4.	    let specialNumbers = [];
+5.	    for (let i = from; i <= to; i++) {
+6.	        if (i % 3 === 0) {
+7.	            specialNumbers.push(i);
+8.	        }
+9.	    }
+10.	    return specialNumbers;
+11.	}
+12.	const specialNumbers = getSpecialNumbers(10, 30);
+13.	console.log(specialNumbers);
+
+1.	// spread и деструктуризация
+2.	
+3.	const numbers = [11, 22, 33, 55, 66];
+4.	const a = numbers[0];
+5.	const b = numbers[1];
+6.	console.log(a, b) // 11, 22
+
+1.	//деструктуризация
+2.	
+3.	const numbers = [11, 22, 33, 55, 66];
+4.	const [a, b, c, d, e, f] = numbers;
+5.	console.log(a, b, c, d, e, f)
+
+1.	// spread оператор
+2.	
+3.	const numbers = [11, 22, 33, 55, 66];
+4.	const [a, b, ...arr] = numbers;
+5.	console.log(a, b, arr);
+
+1.	const numbers = [11, 22, 33, 55, 66];
+2.	const [a, b, ...arr] = numbers;
+3.	console.log(a, b, [1, 2, 3, ...arr]);
+
+1.	const numbers = [11, 22, 33, 55, 66];
+2.	
+3.	function swap(arr) {
+4.	    const [start, ...rest] = arr;
+5.	    return [...rest, start];
+6.	}
+7.	console.log(swap(numbers));
