@@ -28,7 +28,7 @@ personName - переменная
 
 Типы данных в JS
 Примитивные 6 шт
-1.	Number - 1156, 3.14, 1e5, NaN
+1.	Number - 1156, 3.14, 1e5, NaN, Infinity
 2.	String - "John", "Doe", "Hi"
 3.	Boolean - true , false
 4.	Underfined - underfined - если туда небыло присвоенно никакое значение 
