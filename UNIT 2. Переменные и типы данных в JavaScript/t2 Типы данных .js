@@ -1,3 +1,7 @@
+const ag1 = NaN;
+const ag2 = Infinity;
+console.log(typeof ag1, typeof Infinity)
+
 const a = 17;
 const b = 17.17;
 const c = '17';
