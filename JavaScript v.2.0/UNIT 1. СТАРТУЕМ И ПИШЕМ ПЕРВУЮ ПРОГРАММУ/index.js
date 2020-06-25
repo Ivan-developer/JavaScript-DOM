@@ -25,4 +25,19 @@ let c;
 c = document.querySelector('.header');
 
 a.innerHTML = 9999; // new! - ошибка 
-c.innerHTML = 6666;
+c.innerHTML = 5555;
+
+const hello = document.querySelector('.hello');
+
+// hello.innerHTML = '<h1>Hello World</h1>';
+
+// hello.outerHTML = '<h1>Hello World outerHTML</h1>';
+
+// hello.textContent = '<h1>Hello World textContent</h1>';
+
+
+let f = 'Hello my friend'
+
+hello.innerText = `Answer: ${f}`
+
+hello.innerText = f;
