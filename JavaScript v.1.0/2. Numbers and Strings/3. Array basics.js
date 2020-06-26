@@ -54,14 +54,17 @@ number.forEach(callback);
 
 const numbers = [0, 1, 2, 3, 4, 5];
 
-numbers.push(6, 7); 
-numbers.pop(6, 7); 
-numbers.unshift(6, 7); 
-numbers.shift(6, 7); 
-numbers.splice(6, 7); 
-numbers.reverse(6, 7); 
-numbers.fill(6, 7); 
-numbers.sort(6, 7); 
+numbers.push(6, 7); // добавить 
+numbers.pop(); // удалить
+numbers.unshift(6, 7); // доб вначало
+numbers.shift(6, 7); // удал сначало
+
+numbers.splice(2, 0, 'x', 'y'); // с индекса 2 удалить 3 элемента, вставить
+
+// изменить порядок элементов в массиве
+numbers.reverse(); 
+numbers.fill('x', 2, 5); // начиная с индекса 2 , до 5 индекса, заполняю 'x' 
+numbers.sort(); 
 
 
 
