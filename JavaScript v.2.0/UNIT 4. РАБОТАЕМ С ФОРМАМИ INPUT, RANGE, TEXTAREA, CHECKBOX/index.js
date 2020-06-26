@@ -13,11 +13,12 @@ document.querySelector('#btn-1').onclick = () => {
     console.log(document.querySelector('#i2').value);
     let myCheckBox = document.querySelector('#i2');
     console.log(myCheckBox.checked);
+
     if (myCheckBox.checked) {
-        console.log('Нажат');
+        alert('Нажат');
     }
     else {
-        console.log('Не Нажат');
+        alert('Не Нажат');
     }
 }
 
@@ -27,6 +28,11 @@ document.querySelector('#btn-2').onclick = (event) => {
     // console.log(text.value);
     // text.value = 'one';
     let form = document.querySelector('form');
+    let outer = document.querySelector('.outer');
+
+    outer.innerHTML = form.elements.three.value;
+    outer.innerHTML = form.elements.two.value;
+
     console.log(form);
     console.log(form.elements.two.value);
     console.log(form.elements.three.value);

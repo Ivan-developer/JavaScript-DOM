@@ -16,7 +16,7 @@ const user = {
    }
 }
 
-const user1 = {};
-const user1 = new Object();
+// const user1 = {};
+// const user1 = new Object();
 
 console.log(user)
