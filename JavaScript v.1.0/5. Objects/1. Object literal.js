@@ -1,22 +1,18 @@
-const age = 34;
-const age1 = 54;
+'use strict';
+
+const age = 35;
 
 const user = {
-    name : 'Ivan',
-    'name1' : 'Ivan',
-   ['is' + 'Marri'] : true,
-   age, // короткая запись
-   age1 : age1,
-
-   hello : function(){
-      return 'hello'
-   },
-    world() {
-       'world'
-   }
+   'first Name' : 'Ivan',
+   "last Lame" : 'Ivanov',
+   fullName : 'Ivan Ivanov',
+   ['is' + 'Married'] : true,
+   // age : age, // снизу короткая запись
+   age,
 }
 
-// const user1 = {};
-// const user1 = new Object();
+// создали пустой объект 
+const user2 = {};
+const user3 = new Object();
 
 console.log(user)
