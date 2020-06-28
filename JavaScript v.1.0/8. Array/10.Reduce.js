@@ -36,6 +36,16 @@ const users = [
     { id: 5, value: 555},    
 ]
 
+const callback4 = (result, user) => {
+    return (
+        ...result,
+        [user.id]: user
+    );
+}
+
+const usersMap = user.reduce(callback4, {})
+console.log(usersMap)
+
 const userMap = {};
 
 for (const user of users){
