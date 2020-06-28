@@ -43,12 +43,12 @@ for(let key of arr2){
 
 // перебор с Деструктуризацией
 
-for(let key of arr3){
-    const [key, value] = key;
-    console.log(key[0], key)
+for(let pair of arr3){
+    const [key, value] = pair;
+    console.log(key,value)
+    console.log(pair[0], pair[1])
 }
 
-5.30
 
 
 
