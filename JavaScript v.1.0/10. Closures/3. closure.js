@@ -1,4 +1,13 @@
 'use strict';
+/*
+block переменная
+i:10
+Script переменная
+i:0
+Blobal переменная
+*/
+
+
 
 let i = 0;
 
