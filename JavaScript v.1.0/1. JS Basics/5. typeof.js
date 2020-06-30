@@ -1,25 +1,35 @@
 // Типы данных
+// 8 типов данных
+// typeof что бы узнать тип данных
+
 const arr = [
-    null, undefined,
-    true, false,
-    42, NaN, Infinity,
-    'str', "str", `str ${1 + 2}`,
+  true, // boolean
 
-    { x: 2, y: 3},
-    [1,2,3],
-    /[a-z]+/i,
+  42, // number
 
-    // Новые типы 
-    32342234234n, //bigint - для операций с большими числами
-    Symbol('something'), // symbol - испл место строк для служебных свойств объекта
+  NaN, // number
 
+  "something", // string
 
-    function(x,y){
-        return x + y;
-    },
-    (x,y) => x+y
-]
+  undefined, // underfined
 
-for(let value of arr){
-    console.log(typeof value)
+  null, // obj
+
+  { x: 2, y: 3 }, // obj
+  [1, 2, 3], // obj
+  /[a-z]+/i, // obj
+
+  // Новые типы
+  32342234234n, //bigint - для операций с большими числами
+  Symbol("something"), // symbol - испл место строк для служебных свойств объекта
+
+  function (x, y) { // function
+    return x + y;
+  },
+
+  (x, y) => x + y, // function
+];
+
+for (let value of arr) {
+  console.log(typeof value);
 }

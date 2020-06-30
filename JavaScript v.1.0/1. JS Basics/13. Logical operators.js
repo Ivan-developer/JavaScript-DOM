@@ -1,3 +1,3 @@
-const or = 3 || 5;  // find first true
-const and = 3 && 5; // find first false 
+const or = 3 || 5;  // find first true - ИЛИ
+const and = 3 && 5; // find first false - И
 console.log(or, and)
