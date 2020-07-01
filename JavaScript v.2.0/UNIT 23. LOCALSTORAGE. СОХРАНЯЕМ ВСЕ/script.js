@@ -1,3 +1,4 @@
+// событие локал storage
 window.addEventListener('storage', function (e) {
     console.log('change');
     document.querySelector('.out').textContent = localStorage.getItem('b1');
