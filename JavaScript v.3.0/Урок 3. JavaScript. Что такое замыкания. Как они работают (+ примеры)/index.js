@@ -13,6 +13,8 @@ function creatCalcFunction(n){
 const calc = creatCalcFunction(1000)
 calc()
 
+//=============================================
+
 function creatIncrement(n){
     return function(num){
         return n + num
@@ -21,6 +23,8 @@ function creatIncrement(n){
 
 const addOne = creatIncrement(1);
 console.log(addOne(5))
+
+//=============================================
 
 function urlGenerator(domain) {
     return function(url) {

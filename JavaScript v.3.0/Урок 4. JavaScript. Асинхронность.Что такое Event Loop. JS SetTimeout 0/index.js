@@ -27,6 +27,8 @@ function timeOut(){
     console.log('time 5 sec')
 }
 
+// метод .setTimeout() первым параметром принимает функцию, вторым время
+
 window.setTimeout( timeOut
 , 5000)
 
